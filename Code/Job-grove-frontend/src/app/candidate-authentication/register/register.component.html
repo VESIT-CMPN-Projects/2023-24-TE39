@@ -1,0 +1,56 @@
+<div class="main">
+  <div class="container" >
+      <div class="signin">
+          <div class="panel right-panel">
+              <div class="content">
+                  <h3>New To Our Protal!!</h3>
+                  <p><strong>Register now to connect with top companies and find your dream job.</strong></p>
+                  <button class="btn" id="sign-up-btn" [routerLink]="['']">Sign In</button>
+              </div>
+              <img src="../../../assets/img/imaging2.svg" alt="" class="image">
+          </div>
+          <form action="" class="sign-in-form" [formGroup]="userData">
+              <h2 class="title">Sign UP</h2>
+              <small>Fill Your Correct Details</small>
+              <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Firstname" formControlName="firstname">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Lastname" formControlName="lastname">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="Email" formControlName="email">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-phone"></i>
+                  <input type="number" placeholder="Phone No" formControlName="contact">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-venus-mars"></i>
+                  <select name="gender" id="gender" formControlName="gender">
+                      <option value="" disabled selected>Select Your Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                  </select>
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-file"></i>
+                  <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" (change)="read($event)">
+                  
+                  <!-- <button (click)="createResume()">Don't have a resume? Create Resume</button> -->
+              </div>
+              <p (click)="createResume()" style="cursor: pointer;" >Dont have a resume <span style="color: blue;">Click here</span></p>
+              <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Set Password"  formControlName="password">
+              </div>
+              <input type="submit" value="Sign up" class="btn" (click)="registerUser()">
+              
+          </form> 
+      </div>    
+  </div>
+</div>

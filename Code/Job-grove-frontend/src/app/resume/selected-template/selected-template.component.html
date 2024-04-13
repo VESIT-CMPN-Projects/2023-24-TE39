@@ -1,0 +1,498 @@
+<div id="first" *ngIf="id === 2">
+  <button
+    (click)="openPDF()"
+    class="d-flex col-3 btn btn-warning submit align-items-center justify-content-center"
+    [hidden]="downloadClicked"
+  >
+    Download PDF
+  </button>
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway:100"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet"
+    type="text/css"
+  />
+
+  <!-- PAGE STUFF -->
+  <div class="rela-block page" id="htmlData" >
+    <div class="rela-block top-bar">
+      <div class="caps name">
+        <div class="abs-center">
+          {{ resumeData.get("firstname")?.value }}
+          {{ resumeData.get("lastname")?.value }}
+        </div>
+      </div>
+    </div>
+    <div class="side-bar">
+      <div class="mugshot">
+        <div class="logo">
+          <img [src]="resumeData.get('photo')?.value" alt="resume photo" />
+          <p class="logo-text d-flex justify-content-center">
+            {{ resumeData.get("firstname")?.value[0]
+            }}{{ resumeData.get("lastname")?.value[0] }}
+          </p>
+        </div>
+      </div>
+      <p>{{ resumeData.get("location")?.value }}</p>
+      <p>{{ resumeData.get("country")?.value }}</p>
+      <p>{{ resumeData.get("phone")?.value }}</p>
+      <p>{{ resumeData.get("email")?.value }}</p>
+      <br />
+      <!-- Social Links (if available) -->
+      <ng-container *ngIf="resumeData.get('linkedin')?.value">
+        <p class="rela-block social linked-in">
+          {{ resumeData.get("linkedin")?.value }}
+        </p>
+      </ng-container>
+      <ng-container *ngIf="resumeData.get('github')?.value">
+        <p class="rela-block social github">
+          {{ resumeData.get("github")?.value }}
+        </p>
+      </ng-container>
+      <!-- End Social Links -->
+      <p class="rela-block caps side-header">Expertise</p>
+      <ng-container *ngFor="let skill of resumeData.get('skills')?.value">
+        <p class="rela-block list-thing">{{ skill.skillName }}</p>
+      </ng-container>
+      <p class="rela-block caps side-header">Education</p>
+      <ng-container
+        *ngFor="let education of resumeData.get('education')?.value"
+      >
+        <p class="rela-block list-thing">
+          {{ education.degree }} in {{ education.institution }}
+        </p>
+        <p class="rela-block list-thing">{{ education.year }}</p>
+        <p class="rela-block list-thing">{{ education.board }}</p>
+      </ng-container>
+    </div>
+    <div class="rela-block content-container">
+      <h2 class="rela-block caps title">
+        {{ resumeData.get("position")?.value }}
+      </h2>
+      <div class="rela-block separator"></div>
+      <div class="rela-block caps greyed">Profile</div>
+      <p class="long-margin">{{ resumeData.get("aboutMe")?.value }}</p>
+      <div class="rela-block caps greyed">Experience</div>
+      <ng-container
+        *ngFor="let experience of resumeData.get('workExperience')?.value"
+      >
+        <h3>{{ experience.position }}</h3>
+        <p class="light">{{ experience.company }}</p>
+        <p class="justified">{{ experience.description }}</p>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="id == 1" id="htmlData">
+  <button
+    (click)="openPDF()"
+    class="d-flex col-3 btn btn-warning submit align-items-center justify-content-center"
+    [hidden]="downloadClicked"
+  >
+    Download PDF
+  </button>
+  <div id="second" >
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <div class="resume-wrapper">
+      <section class="profile section-padding">
+        <div class="container">
+          <div class="picture-resume-wrapper">
+            <div class="picture-resume">
+              <span
+                ><img
+                  src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"
+                  alt=""
+              /></span>
+              <!-- <svg version="1.1" viewBox="0 0 350 350">
+                <defs>
+                  <filter id="goo">
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="8"
+                      result="blur"
+                    />
+                    <feColorMatrix
+                      in="blur"
+                      mode="matrix"
+                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9"
+                      result="cm"
+                    />
+                  </filter>
+                </defs>
+  
+                <g filter="url(#goo)">
+                  <circle
+                    id="main_circle"
+                    class="st0"
+                    cx="171.5"
+                    cy="175.6"
+                    r="130"
+                  />
+  
+                  <circle
+                    id="circle"
+                    class="bubble0 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble1 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble2 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble3 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble4 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble5 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble6 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble7 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble8 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble9 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                  <circle
+                    id="circle"
+                    class="bubble10 st1"
+                    cx="171.5"
+                    cy="175.6"
+                    r="122.7"
+                  />
+                </g>
+              </svg> -->
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="name-wrapper">
+            <h1>
+              {{ resumeData.get("firstname")?.value }}<br />{{
+                resumeData.get("lastname")?.value
+              }}
+            </h1>
+            <!-- YOUR NAME AND LAST NAME  -->
+          </div>
+          <div class="clearfix"></div>
+          <div class="contact-info clearfix">
+            <ul class="list-titles">
+              <li>Call</li>
+              <li>Mail</li>
+              <li>Web</li>
+              <li>Home</li>
+            </ul>
+            <ul class="list-content">
+              <li>{{ resumeData.get("phone")?.value }}</li>
+              <!-- YOUR PHONE NUMBER  -->
+              <li>{{ resumeData.get("email")?.value }}</li>
+              <!-- YOUR EMAIL -->
+              <li>
+                <a href="#">{{ resumeData.get("firstname")?.value }}.com</a>
+              </li>
+              <!-- YOUR WEBSITE  -->
+              <li>{{ resumeData.get("location")?.value }}</li>
+              <!-- YOUR STATE AND COUNTRY  -->
+            </ul>
+          </div>
+          <div class="contact-presentation">
+            <!-- YOUR PRESENTATION RESUME  -->
+            <p>
+              {{ resumeData.get("aboutMe")?.value }}
+            </p>
+          </div>
+          <div class="contact-social clearfix">
+            <ul class="list-titles">
+              <li>Twitter</li>
+              <li>Dribbble</li>
+              <!-- <li>github</li> -->
+            </ul>
+            <ul class="list-content">
+              <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
+              <li>
+                <a href="">{{ resumeData.get("linkedin")?.value }}</a>
+              </li>
+              <!-- YOUR TWITTER USER  -->
+              <li>
+                <a href="">{{ resumeData.get("github")?.value }}</a>
+              </li>
+              <!-- YOUR DRIBBBLE USER  -->
+            </ul>
+          </div>
+        </div>
+      </section>
+  
+      <section class="experience section-padding">
+        <div class="container">
+          <h3 class="experience-title">Experience</h3>
+  
+          <div class="experience-wrapper">
+            <div *ngFor="let work of resumeData.get('workExperience')?.value">
+              <div class="company-wrapper clearfix">
+                <div class="experience-title">{{ work.company }}</div>
+                <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+                <div class="time">{{ work.tenure }}</div>
+                <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+              </div>
+  
+              <div class="job-wrapper clearfix">
+                <div class="experience-title">{{ work.position }}</div>
+                <!-- JOB TITLE  -->
+                <div class="company-description">
+                  <p>
+                    {{ work.description }}
+                  </p>
+                  <!-- JOB DESCRIPTION  -->
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <!--Skill experience-->
+  
+          <div class="section-wrapper clearfix" >
+            <h3 class="section-title">Skills</h3>
+            <!-- YOUR SET OF SKILLS  -->
+            <ul>
+              <li *ngFor="let skill of resumeData.get('skills')?.value" class="skill-percentage">{{skill.skillName}}</li>
+            </ul>
+          </div>
+  
+          <div class="section-wrapper clearfix">
+            <h3 class="section-title">Hobbies</h3>
+            <!-- DESCRIPTION OF YOUR HOBBIES -->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a
+              elit facilisis, adipiscing leo in, dignissim magna.
+            </p>
+  
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a
+              elit facilisis, adipiscing leo in, dignissim magna.
+            </p>
+          </div>
+        </div>
+      </section>
+  
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="t2">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<div class="container">
+  <div class="header">
+    <div class="full-name">
+      <span class="first-name">John</span> 
+      <span class="last-name">Doe</span>
+    </div>
+    <div class="contact-info">
+      <span class="email">Email: </span>
+      <span class="email-val">john.doe@gmail.com</span>
+      <span class="separator"></span>
+      <span class="phone">Phone: </span>
+      <span class="phone-val">111-222-3333</span>
+    </div>
+    
+    <div class="about">
+      <span class="position">Front-End Developer </span>
+      <span class="desc">
+        I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
+      </span>
+    </div>
+  </div>
+   <div class="details">
+    <div class="section">
+      <div class="section__title">Experience</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <div class="left">
+            <div class="name">KlowdBox</div>
+            <div class="addr">San Fr, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div>
+        </div>
+                <div class="section__list-item">
+          <div class="left">
+            <div class="name">Akount</div>
+            <div class="addr">San Monica, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="section">
+      <div class="section__title">Education</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <div class="left">
+            <div class="name">Sample Institute of technology</div>
+            <div class="addr">San Fr, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div>
+        </div>
+        <div class="section__list-item">
+          <div class="left">
+            <div class="name">Akount</div>
+            <div class="addr">San Monica, CA</div>
+            <div class="duration">Jan 2011 - Feb 2015</div>
+          </div>
+          <div class="right">
+            <div class="name">Fr developer</div>
+            <div class="desc">did This and that</div>
+          </div>
+        </div>
+
+      </div>
+      
+  </div>
+     <div class="section">
+      <div class="section__title">Projects</div> 
+       <div class="section__list">
+         <div class="section__list-item">
+           <div class="name">DSP</div>
+           <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
+         </div>
+         
+         <div class="section__list-item">
+                    <div class="name">DSP</div>
+           <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
+           </div>
+         </div>
+       </div>
+    </div>
+     <div class="section">
+       <div class="section__title">Skills</div>
+       <div class="skills">
+         <div class="skills__item">
+           <div class="left"><div class="name">
+             Javascript
+             </div></div>
+           <div class="right">
+                          <input  id="ck1" type="checkbox" checked/>
+
+             <label for="ck1"></label>
+                          <input id="ck2" type="checkbox" checked/>
+
+              <label for="ck2"></label>
+                         <input id="ck3" type="checkbox" />
+
+              <label for="ck3"></label>
+                           <input id="ck4" type="checkbox" />
+            <label for="ck4"></label>
+                          <input id="ck5" type="checkbox" />
+              <label for="ck5"></label>
+
+           </div>
+         </div>
+         
+       </div>
+       <div class="skills__item">
+           <div class="left"><div class="name">
+             CSS</div></div>
+           <div class="right">
+                          <input  id="ck1" type="checkbox" checked/>
+
+             <label for="ck1"></label>
+                          <input id="ck2" type="checkbox" checked/>
+
+              <label for="ck2"></label>
+                         <input id="ck3" type="checkbox" />
+
+              <label for="ck3"></label>
+                           <input id="ck4" type="checkbox" />
+            <label for="ck4"></label>
+                          <input id="ck5" type="checkbox" />
+              <label for="ck5"></label>
+
+           </div>
+         </div>
+         
+       </div>
+     <div class="section">
+     <div class="section__title">
+       Interests
+       </div>
+       <div class="section__list">
+         <div class="section__list-item">
+                  Football, programming.
+          </div>
+       </div>
+     </div>
+     </div>
+  </div>
+</div> -->

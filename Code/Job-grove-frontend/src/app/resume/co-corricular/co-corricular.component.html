@@ -1,0 +1,55 @@
+<div
+  class="co-curricular-activities form-section p-4 bg-rgb-green w-100 height-100vh m-0"
+>
+  <form [formGroup]="coCurricularActivityForm">
+    <h3 class="text-center mb-4">Co-curricular Activities</h3>
+    <div
+      class="co-curricular-activities-container"
+      formArrayName="coCorricular"
+    >
+      <!-- Co-curricular Activity Input Fields -->
+      <div
+        *ngFor="
+          let activityGroup of coCurricularActivityArray.controls;
+          let i = index
+        "
+        class="co-curricular-activity-input mb-4 d-flex flex-column"
+        [formGroupName]="i"
+      >
+        <button
+          type="button"
+          (click)="removeCoCurricularActivity(i)"
+          class="btn btn-danger align-self-end"
+        >
+          Remove
+        </button>
+        <div class="d-flex justify-content-between mb-2">
+          <div class="m-2 flex-fill">
+            <label for="activity">Co-curricular Activity {{ i + 1 }}</label>
+            <input
+              type="text"
+              formControlName="description"
+              class="form-control"
+              placeholder="Enter co-curricular activity"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      (click)="addCoCurricularActivity()"
+      class="btn btn-primary"
+    >
+      Add Co-curricular Activity
+    </button>
+    <div class="d-flex flex-row justify-content-between my-2">
+      <a class="btn btn-primary" [routerLink]="['/work-experience']">
+        <i class="fas fa-arrow-left p-2"></i> Previous
+      </a>
+      <button type="button" class="btn btn-success" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

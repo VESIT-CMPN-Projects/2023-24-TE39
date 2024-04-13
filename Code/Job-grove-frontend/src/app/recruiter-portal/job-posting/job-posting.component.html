@@ -1,0 +1,77 @@
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Post A Job</h1>
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+      <section class="site-section">
+        <div class="container">
+        </div>
+          <div class="row mb-5">
+            <div class="col-lg-12">
+              <form class="p-2 p-md-5 border rounded" method="post" [formGroup]="jobData">
+                <h3 class="text-black mb-1 border-bottom pb-2">Job Details</h3>
+                
+                <div class="form-group">
+                  <label for="company-website-tw d-block" class=" mb-2 mt-2">Upload JD</label> <br>
+                  <label class="btn btn-green btn-md btn-file">
+                    Browse File<input type="file" id="jdURL" name="jdURL" accept=".pdf,.doc,.docx" (change)="readJdURL($event)">
+                  </label>
+                </div>
+  
+                
+                <div class="form-group">
+                  <label for="job-title" class="mb-2 mt-2">Job Title</label>
+                  <input type="text" class="form-control" id="job-title" placeholder="e.g. Product Designer" formControlName="jobTitle">
+                </div>
+                <div class="form-group">
+                  <label for="job-location" class="mb-2 mt-2">Location</label>
+                  <input type="text" class="form-control" id="job-location" placeholder="e.g. New York" formControlName="location">
+                </div>
+                <div class="form-group">
+                  <label for="job-location" class="mb-2 mt-2">Salary</label>
+                  <input type="text" class="form-control" id="job-sal" placeholder="e.g. 100000" formControlName="salary">
+                </div>
+  
+                <div class="form-group">
+                  <label for="job-sector" class="mb-2 mt-2">Job sector</label>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+                    <button ngbDropdownItem (click)="selectSector(sec)" *ngFor="let sec of sector">{{sec.name}}</button>
+                </div>
+                </div>
+  
+                <div class="form-group">
+                  <label for="job-type" class="mb-2 mt-2">Job Type</label>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+                    <button ngbDropdownItem (click)="selectJobType('Part Time')">Part Time</button>
+                    <button ngbDropdownItem (click)="selectJobType('Full Time')">Full Time</button>
+                </div>
+                </div>
+  
+  
+                <div class="form-group">
+                  <label for="job-description" class="mb-3 mt-2 ">Job Description</label>
+                  <div class="editor" id="editor-1">
+                    <textarea class="rounded" name="" id="" cols="124" rows="5" placeholder="Write a job description" formControlName="jobDescription"></textarea>
+                  </div>
+                </div>
+  
+  
+              </form>
+            </div>
+  
+           
+          </div>
+          <div class="row ">
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-block btn-green btn-md p-2 ps-5 pe-5  me-5" (click)="postJob()">Save Job</button>
+              
+            </div>
+          </div>
+        </section></div>
+  </section>
+
+
+</main><!-- End #main -->

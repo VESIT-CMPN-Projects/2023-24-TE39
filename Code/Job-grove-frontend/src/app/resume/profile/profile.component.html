@@ -1,0 +1,80 @@
+<div class="form-section header p-4 m-0 bg-rgb-green w-100 height-100vh">
+  <form [formGroup]="detailsForm" class="d-flex flex-column">
+    <h3 class="text-center mb-4">Let's Start with Your Header</h3>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="first" class="form-label">First Name</label>
+        <input type="text" [formControlName]="'firstname'" id="first" class="form-control" placeholder="Enter your First Name">
+        <div *ngIf="detailsForm.get('firstname')?.invalid && detailsForm.get('firstname')?.touched && detailsForm.get('firstname')?.errors?.['required']" class="text-danger mt-1">First Name is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="last" class="form-label">Last Name</label>
+        <input type="text" [formControlName]="'lastname'" id="last" class="form-control" placeholder="Enter your Last Name">
+        <div *ngIf="detailsForm.get('lastname')?.invalid && detailsForm.get('lastname')?.touched && detailsForm.get('lastname')?.errors?.['required']" class="text-danger mt-1">Last Name is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="position" class="form-label">Position</label>
+        <input type="text" [formControlName]="'position'" id="position" class="form-control" placeholder="Enter your Position">
+        <div *ngIf="detailsForm.get('position')?.invalid && detailsForm.get('position')?.touched && detailsForm.get('position')?.errors?.['required']" class="text-danger mt-1">Position is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="language" class="form-label">Language</label>
+        <select [formControlName]="'language'" id="language" class="form-select">
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="french">French</option>
+        </select>
+        <div *ngIf="detailsForm.get('language')?.invalid && detailsForm.get('language')?.touched && detailsForm.get('language')?.errors?.['required']" class="text-danger mt-1">Language is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" [formControlName]="'email'" id="email" class="form-control" placeholder="Enter your Email">
+        <div *ngIf="detailsForm.get('email')?.invalid && detailsForm.get('email')?.touched && detailsForm.get('email')?.errors?.['required']" class="text-danger mt-1">Email is required.</div>
+        <div *ngIf="detailsForm.get('email')?.invalid && detailsForm.get('email')?.touched && detailsForm.get('email')?.errors?.['email']" class="text-danger mt-1">Invalid email format.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="country" class="form-label">Country</label>
+        <select [formControlName]="'country'" id="country" class="form-select">
+          <option value="India">India</option>
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">UK</option>
+        </select>
+        <div *ngIf="detailsForm.get('country')?.invalid && detailsForm.get('country')?.touched && detailsForm.get('country')?.errors?.['required']" class="text-danger mt-1">Country is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" [formControlName]="'phone'" id="phone" class="form-control" placeholder="Enter your Phone Number">
+        <div *ngIf="detailsForm.get('phone')?.invalid && detailsForm.get('phone')?.touched && detailsForm.get('phone')?.errors?.['required']" class="text-danger mt-1">Phone Number is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="inputGroupFile02" class="form-label">Upload Photo</label>
+        <div class="input-group">
+          <input type="file" [formControlName]="'photo'" class="form-control" id="inputGroupFile02">
+          <label class="input-group-text p-3" for="inputGroupFile02" style="height: 45px;">Upload</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="aboutMe" class="form-label">About Me</label>
+        <input type="text" [formControlName]="'aboutMe'" id="aboutMe" class="form-control" placeholder="About me">
+        <div *ngIf="detailsForm.get('aboutMe')?.invalid && detailsForm.get('aboutMe')?.touched && detailsForm.get('aboutMe')?.errors?.['required']" class="text-danger mt-1">About Me is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" [formControlName]="'location'" id="location" class="form-control" placeholder="Enter your Location">
+        <div *ngIf="detailsForm.get('location')?.invalid && detailsForm.get('location')?.touched && detailsForm.get('location')?.errors?.['required']" class="text-danger mt-1">Location is required.</div>
+      </div>
+      <div class="col-md-6">
+        <label for="linkedin" class="form-label">Linkedin Link</label>
+        <input type="text" [formControlName]="'linkedin'" id="linkedin" class="form-control" placeholder="Enter your Linkedin Link">
+      </div>
+      <div class="col-md-6">
+        <label for="github" class="form-label">Github Link</label>
+        <input type="text" [formControlName]="'github'" id="github" class="form-control" placeholder="Enter your Github Link">
+      </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between mt-4">
+      <button type="button" class="btn btn-primary" (click)="onSubmit()">Next<i class="fas fa-arrow-right p-2"></i></button>
+    </div>
+  </form>
+</div>

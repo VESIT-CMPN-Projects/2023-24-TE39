@@ -1,0 +1,151 @@
+<main id="main" class="main">
+
+  <div class="pagetitle text-center m-3">
+    <h1>Applicants</h1>
+  </div><!-- End Page Title -->
+
+  <div class="container">
+      <div class="col-md-12" *ngFor="let candidate of candidateDetails| paginate: { itemsPerPage: 10, currentPage: p }">
+          <div class="card b-1 hover-shadow mb-20">
+              <div class="media card-body d-flex">
+                  <div class="media-left pr-12">
+                      <img class="avatar avatar-xl no-radius" src="assets/img/profile.avif" alt="...">
+                  </div>
+                  <div class="media-body ">
+                      <div class="mb-2 ">
+                          <span class="fs-20 pr-16 flex-start">{{candidate.firstname}} {{candidate.lastname}}</span>
+                          
+                      </div>
+                      <small class="fs-16 fw-300 ls-1">{{candidate.resume}}</small>
+
+                  </div>
+                  
+                  <!-- <div class="media-right text-right d-none d-md-block">
+                      <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Menlo Park, CA</p>
+                      <span class="text-fade"><i class="fa fa-money pr-1"></i> $60 per hour</span>
+                  </div> -->
+                  
+                <button class="btn d-block w-10 d-sm-inline-block btn-light flex-end" style="width: fit-content;">View more</button>
+                  
+              </div>
+              <!-- <footer class="card-footer flexbox align-items-center">
+                  <div>
+                      <strong>Applied on:</strong>
+                      <span>21 Jan, 2023</span>
+                  </div>
+                  <div class="card-hover-show">
+                      <a class="btn btn-xs fs-10 btn-bold btn-info" href="#">Download CV</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-primary" href="#" data-toggle="modal" data-target="#modal-contact">Contact</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-warning" href="#">Delete</a>
+                      
+                  </div>
+              </footer> -->
+          </div>
+      
+          <!-- <div class="card b-1 hover-shadow mb-20">
+              <div class="media card-body">
+                  <div class="media-left pr-12">
+                      <img class="avatar avatar-xl no-radius" src="assets/img/profile.avif" alt="">
+                  </div>
+                  <div class="media-body">
+                      <div class="mb-2">
+                          <span class="fs-20 pr-16">Maryam Amiri</span>
+                      </div>
+                      <small class="fs-16 fw-300 ls-1">Designer</small>
+                  </div>
+                  <div class="media-right text-right d-none d-md-block">
+                      <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Fairfield, IA</p>
+                      <span class="text-fade"><i class="fa fa-money pr-1"></i> $45 per hour</span>
+                  </div>
+              </div>
+      
+              <footer class="card-footer flexbox align-items-center">
+                  <div>
+                      <strong>Applied on:</strong>
+                      <span>17 April, 2023</span>
+                  </div>
+                  <div class="card-hover-show">
+                      <a class="btn btn-xs fs-10 btn-bold btn-info" href="#">Download CV</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-primary" href="#" data-toggle="modal" data-target="#modal-contact">Contact</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-warning" href="#">Delete</a>
+                  </div>
+              </footer>
+          </div>
+      
+          <div class="card b-1 hover-shadow mb-20">
+              <div class="media card-body">
+                  <div class="media-left pr-12">
+                      <img class="avatar avatar-xl no-radius" src="assets/img/profile.avif" alt="...">
+                  </div>
+                  <div class="media-body">
+                      <div class="mb-2">
+                          <span class="fs-20 pr-16">Frank Camly</span>
+                      </div>
+                      <small class="fs-16 fw-300 ls-1">Front end developer</small>
+                  </div>
+                  <div class="media-right text-right d-none d-md-block">
+                      <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Seattle, WA</p>
+                      <span class="text-fade"><i class="fa fa-money pr-1"></i> $40 per hour</span>
+                  </div>
+              </div>
+      
+              <footer class="card-footer flexbox align-items-center">
+                  <div>
+                      <strong>Applied on:</strong>
+                      <span>15 Jan, 2023</span>
+                  </div>
+                  <div class="card-hover-show">
+                      <a class="btn btn-xs fs-10 btn-bold btn-info" href="#">Download CV</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-primary" href="#" data-toggle="modal" data-target="#modal-contact">Contact</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-warning" href="#">Delete</a>
+                  </div>
+              </footer>
+          </div>
+      
+          <div class="card b-1 hover-shadow mb-20">
+              <div class="media card-body">
+                  <div class="media-left pr-12">
+                      <img class="avatar avatar-xl no-radius" src="assets/img/profile.avif" alt="...">
+                  </div>
+                  <div class="media-body">
+                      <div class="mb-2">
+                          <span class="fs-20 pr-16">Tim Hank</span>
+                      </div>
+                      <small class="fs-16 fw-300 ls-1">Web developer</small>
+                  </div>
+                  <div class="media-right text-right d-none d-md-block">
+                      <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> Fremont, CA</p>
+                      <span class="text-fade"><i class="fa fa-money pr-1"></i> $55 per hour</span>
+                  </div>
+              </div>
+      
+              <footer class="card-footer flexbox align-items-center">
+                  <div>
+                      <strong>Applied on:</strong>
+                      <span>11 Jan, 2023</span>
+                  </div>
+                  <div class="card-hover-show">
+                      <a class="btn btn-xs fs-10 btn-bold btn-info" href="#">Download CV</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-primary" href="#" data-toggle="modal" data-target="#modal-contact">Contact</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-warning" href="#">Delete</a>
+                  </div>
+              </footer>
+          </div> -->
+      
+          <nav>
+              <ul class="pagination justify-content-center">
+                  <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+              </ul>
+          </nav>
+          <br>
+      </div>
+      <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+      </div>
+
+</main><!-- End #main -->

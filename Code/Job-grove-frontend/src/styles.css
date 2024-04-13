@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f6f9ff;
+  color: #444444;
+}
+
+.btn-green{
+  color: white;
+  background-color: #18d26e;
+}
+.btn-green:hover{
+  background-color: #2eca6a;
+  color: white;
+}
+
+a {
+  color: #4154f1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}

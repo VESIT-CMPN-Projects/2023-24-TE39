@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  .main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2f2f2; /* Soft grey background */
+  }
+  .container{
+  position: relative;
+  width: 70vw;
+  height: 95vh;
+  background: #ffffff; /* White background */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  .signin{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  }
+  form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  min-width: 238px;
+  padding: 0 40px; /* Reduced padding */
+  }
+  .title{
+  font-size: 35px;
+  color: #444444; /* Dark grey title */
+  margin-bottom: 20px; /* Increased margin */
+  }
+  .input-field{
+  width: 100%;
+  height: 50px;
+  background: #f8f8f8; /* Light grey background */
+  margin: 10px 0;
+  border: 2px solid #00B074; /* Green border */
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  }
+  .input-field i{
+  flex: 1;
+  text-align: center;
+  color: #888888; /* Light grey icon color */
+  font-size: 18px;
+  }
+  .input-field input{
+  flex: 6;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444444; /* Dark grey text color */
+  }
+  .btn{
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: #00B074; /* Green button background */
+  color: #ffffff; /* White button text color */
+  font-weight: 600;
+  margin: 10px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  }
+  .btn:hover{
+  background: #008c5a; /* Darker green on hover */
+  }
+  .panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  height: 100%;
+  min-width: 237px;
+  padding: 0 10px;
+  text-align: center;
+  background: linear-gradient(-45deg, #00B074, #008c5a); /* Green gradient */
+  }
+  .content{
+  color: #ffffff; /* White text color */
+  }
+  .panel h3{
+  font-size: 24px;
+  font-weight: 600;
+  }
+  .panel p{
+  font-size: 15px;
+  padding: 10px;
+  }
+  .image{
+  width: 100%;
+  opacity: 0.7;
+  }
+  

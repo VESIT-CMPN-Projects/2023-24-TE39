@@ -1,0 +1,97 @@
+<div
+  class="work-experience form-section p-4 bg-rgb-green w-100 height-100vh m-0"
+>
+  <form [formGroup]="workExperienceForm">
+    <h3 class="text-center mb-4">Let's Start with Your Work Experience</h3>
+    <div class="work-experience-container" formArrayName="workExperience">
+      <!-- Work Experience Input Fields -->
+      <div
+        *ngFor="
+          let experienceGroup of workExperienceArray.controls;
+          let i = index
+        "
+        class="work-experience-input mb-4 d-flex flex-column"
+        [formGroupName]="i"
+      >
+        <button
+          type="button"
+          (click)="removeWorkExperience(i)"
+          class="btn btn-danger align-self-end"
+        >
+          Remove
+        </button>
+        <div class="d-flex justify-content-between mb-2">
+          <div class="m-2 flex-fill">
+            <label for="company">Company</label>
+            <input
+              type="text"
+              formControlName="company"
+              class="form-control"
+              id="company"
+              placeholder="Enter Company"
+            />
+          </div>
+          <div class="m-2 flex-fill">
+            <label for="position">Position</label>
+            <input
+              type="text"
+              formControlName="position"
+              class="form-control"
+              id="position"
+              placeholder="Enter Position"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="m-2 flex-fill">
+            <label for="type">Type of job</label>
+            <input
+              type="text"
+              formControlName="w_type"
+              class="form-control"
+              id="type"
+              placeholder="Enter Position"
+            />
+          </div>
+          <div class="m-2 flex-fill">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              formControlName="description"
+              class="form-control"
+              id="description"
+              placeholder="Enter Description"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="m-2 flex-fill w-50">
+            <label for="tenure">Tenure</label>
+            <input
+              type="number"
+              formControlName="tenure"
+              class="form-control"
+              id="tenure"
+              placeholder="Enter Tenure in months"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" (click)="addWorkExperience()" class="btn btn-primary">
+      Add Work Experience
+    </button>
+    <div class="d-flex flex-row justify-content-between mt-4">
+      <a class="btn btn-primary" [routerLink]="['/skills']">
+        <i class="fas fa-arrow-left p-2"></i> Previous
+      </a>
+      <a
+        class="btn btn-primary"
+        (click)="onSubmit()"
+        [routerLink]="['/co-curricular']"
+      >
+        Next <i class="fas fa-arrow-right p-2"></i>
+      </a>
+    </div>
+  </form>
+</div>

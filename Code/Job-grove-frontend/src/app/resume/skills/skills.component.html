@@ -1,0 +1,31 @@
+<div class="skills form-section p-4 bg-rgb-green w-100 height-100vh m-0">
+    <form [formGroup]="skillsForm" class="d-flex flex-column">
+      <h3 class="text-center mb-4">Let's Start with Your Skills</h3>
+      <div class="row g-3">
+        <div class="col-md-12">
+          <!-- Skill Input Fields -->
+          <div class="skill-input mb-4" formArrayName="skills">
+            <div *ngFor="let skill of skillsArray.controls; let i = index" [formGroupName]="i">
+              <div class="d-flex justify-content-between">
+                <label for="skill{{ i }}" class="form-label">Skill {{ i + 1 }}</label>
+                <button type="button" class="btn btn-danger" (click)="removeSkill(i)">Remove</button>
+              </div>
+              <!-- Use formControlName="skillName" instead of formControlName="skillsArray" -->
+              <input type="text" formControlName="skillName" class="form-control my-2" id="skill{{ i }}" placeholder="Enter your Skill">
+              <div *ngIf="skill.get('skillName')?.invalid && skill.get('skillName')?.touched && skill.get('skillName')?.errors?.['required']" class="text-danger mt-1">Skill is required.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" (click)="addSkill()" class="btn btn-primary">Add Skill</button>
+      <div class="d-flex flex-row justify-content-between mt-4">
+        <a class="btn btn-primary" [routerLink]="['/education']">
+          <i class="fas fa-arrow-left p-2"></i> Previous
+        </a>
+        <a class="btn btn-primary" (click)="onSubmit()">
+          Next <i class="fas fa-arrow-right p-2"></i>
+        </a>
+      </div>
+    </form>
+  </div>
+  

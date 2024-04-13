@@ -1,0 +1,58 @@
+<aside id="sidebar" class="sidebar" >
+  
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" [routerLink]="['/job-posting']" (click)="setActiveItem('jobPosting')">
+        <!-- <i class="bi bi-question-circle"></i> -->
+        <span>Job Posting</span>
+      </a>
+    </li>
+    <!-- end of Post a job  -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" (click)="setActiveItem('jobListing')">
+        <!-- <i class="bi bi-question-circle"></i> -->
+        <span>Job Listings</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed"  (click)="setActiveItem('applicationTracking')">
+        <!-- <i class="bi bi-envelope"></i> -->
+        <span>Applicant Tracking</span>
+      </a>
+    </li>
+    <!-- End Applicant Tracking -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed"  (click)="setActiveItem('candidateProfile')">
+        <!-- <i class="bi bi-card-list"></i> -->
+        <span>Candidate Profiles</span>
+      </a>
+    </li>
+    <!-- End Candidate Profiles-->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed"  (click)="setActiveItem('companyProfile')">
+        <!-- <i class="bi bi-person"></i> -->
+        <span>Company and Profile Management</span>
+      </a>
+    </li>
+    <!-- End Profile Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" (click)="setActiveItem('logout')">
+        <!-- <i class="bi bi-box-arrow-in-right"></i> -->
+        <span>Logout</span>
+      </a>
+    </li>
+    <!-- End Login Page Nav -->
+  </ul>
+</aside>
+<!-- End Sidebar-->

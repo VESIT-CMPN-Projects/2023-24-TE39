@@ -1,0 +1,55 @@
+<div class="main">
+  <section class="container">
+      <header>Registration Form</header>
+      <form action="#" class="form" [formGroup]="recruiterData">
+        <div class="input-box">
+          <input type="text" placeholder="Enter full name" required formControlName="recruiterName"/>
+        </div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Enter email address" required formControlName="email"/>
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <input type="number" placeholder="Enter phone number" required formControlName="phoneNo"/>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Enter password" required formControlName="password"/>
+          </div>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter Company Website" required formControlName="companyName"/>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter Company Website" required formControlName="website"/>
+        </div>
+        
+        <div class="input-box">
+          <input type="text" placeholder="Enter Company Description" required formControlName="description"/>
+        </div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Enter Company Location" required formControlName="location"/>
+        </div>
+        
+        <div class="input-box">
+          <input type="text" placeholder="Enter Industry" required formControlName="industry"/>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Enter GST NO" required formControlName="gst_in"/>
+        </div>
+        <div class="input-box">
+          <label>License</label>
+          <input type="file" id="license" name="license" accept=".pdf,.doc,.docx" (change)="readLicense($event)">
+        </div>
+        <div class="input-box">
+          <label>Logo</label>
+          <input type="file" id="logo_url" name="logo_url" accept=".pdf,.doc,.docx" (change)="readLogoUrl($event)">
+        </div>
+
+        <button (click)="registerRecruiter()">Submit</button>
+      </form>
+    </section>
+ 
+</div>

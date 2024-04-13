@@ -1,0 +1,30 @@
+<div class="main">
+    
+  <div class="container">
+      <div class="signin">
+          <form action="" class="sign-in-form" [formGroup]="loginForm">
+              <h2 class="title">Sign in</h2>
+              <small>Fill Your Details</small>
+              <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="Admin Name" formControlName="admin_name">
+              </div>
+              <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Password" formControlName="password">
+              </div>
+              <button type="submit" value="Login" class="btn" (click)="submit()">Login</button>
+              
+          </form>
+          
+          <div class="panel right-panel">
+              <div class="content">
+                  <h3>Welcome back! </h3>
+                  <p>Log in to explore new job opportunities and career advancements.</p>
+                  <!-- <button class="btn" id="register-btn" (click)="onRegister()">Register</button> -->
+              </div>
+              <img src="../../../assets/img/imaging1.svg" alt="" class="image">
+          </div>
+      </div>    
+    </div> 
+  </div>
